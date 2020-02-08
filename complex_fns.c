@@ -48,3 +48,18 @@ Complex complex_div(Complex c1, Complex c2){
 	c.real /= denom;
 	c.imag /= denom;
 	
+	if(denom==0){						
+		printf("You can not divide by a 0!\n");
+	}
+	else{
+		return c;
+	 }
+}
+
+void hdler_a(Complex (*complex_fn)(Complex, Complex), Complex c1, Complex c2){
+	printf("%lf %lf\n", complex_fn(c1,c2).real, complex_fn(c1,c2).imag);
+}
+
+void hdler_b(double (*complex_fn)(Complex), Complex c1){
+	printf("%lf \n", complex_fn(c1));
+}
